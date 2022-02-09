@@ -1,0 +1,44 @@
+:root {
+  --primary-light: #8abdff;
+  --primary: #6d5dfc;
+  --primary-dark: #5b0eeb;
+  --white: #ffffff;
+  --greyLight-1: #e4ebf5;
+  --greyLight-2: #c8d0e7;
+  --greyLight-3: #bec8e4;
+  --greyDark: #9baacf;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  background: var(--greyLight-1);
+  text-align: center;
+  padding: 40px;
+}
+
+.btn {
+  width: 10rem;
+  height: 3rem;
+  cursor: pointer;
+  line-height: 2.8rem;
+  border-radius: 10px;
+  box-shadow: 0.3rem 0.3rem 0.8rem var(--greyLight-3);
+  margin: 10px;
+  transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: var(--greyLight-1);
+  box-shadow: inset 0.2rem 0.2rem 0.8rem var(--greyLight-1),
+    inset -0.2rem -0.2rem 0.5rem var(--primary-dark);
+}
+.btn-primary:active {
+  box-shadow: inset 0.3rem 0.3rem 0.8rem var(--primary-dark),
+    inset -0.3rem -0.3rem 0.5rem var(--greyLight-3);
+}
+.click {
+  box-shadow: inset 0.3rem 0.3rem 0.8rem var(--primary-dark),
+    inset -0.3rem -0.3rem 0.5rem var(--greyLight-3);
+}
