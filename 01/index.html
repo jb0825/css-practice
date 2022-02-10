@@ -4,45 +4,80 @@
 <head>
     <link rel="stylesheet" type="text/css" href="./style.css">
 
-    <!-- Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-
     <!-- Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+
 </head>
 
 <body>
-    <div class="container">
-        <article class="buttons">
-            <section>
+    <article>
+        <section class="buttons">
+            <div class="content">
                 <div class="btn btn-primary">Button</div>
-                <div class="btn btn-primary primary-click">Click Button</div>
-            </section>
-            <section>
+                <div class="btn btn-primary primary-click">Clicked</div>
+            </div>
+            <div class="content">
                 <div class="btn btn-secondary">Button</div>
-                <div class="btn btn-secondary secondary-click">Button</div>
-            </section>
-        </article>
+                <div class="btn btn-secondary secondary-click">Clicked</div>
+            </div>
 
-        <article class="checkbox">
-            <section>
+            <div class="content">
+                <div class="btn btn-effect-1">Button</div>
+                <div class="btn btn-effect-2">Button</div>
+            </div>
+        </section>
+
+        <section class="checkbox">
+            <div class="content type-1">
                 <div>
-                    <input id="checkbox-1" type="checkbox">
+                    <input id="checkbox-1" type="checkbox" checked>
                     <label for="checkbox-1">
                         <i class="material-icons">done</i>
                     </label>
                 </div>
                 <div>
-                    <input id="checkbox-1" type="checkbox">
-                    <label for="checkbox-1">
+                    <input id="checkbox-2" type="checkbox">
+                    <label for="checkbox-2">
                         <i class="material-icons">done</i>
                     </label>
                 </div>
-            </section>
-        </article>
-    </div>
+            </div>
+
+            <div class="content type-2">
+                <div>
+                    <input id="checkbox-3" type="checkbox" checked>
+                    <label for="checkbox-3">
+                        <div></div>
+                    </label>
+                </div>
+                <div>
+                    <input id="checkbox-4" type="checkbox">
+                    <label for="checkbox-4" class="checked">
+                        <div></div>
+                    </label>
+                </div>
+            </div>
+        </section>
+    </article>
+
+    <article>
+        <section class="circle">
+            <div class="content">
+
+                <div class="back-1" state="play">
+                    <div class="back-2"></div>
+                </div>
+
+                <div class="circle-button">
+                    <i class="material-icons icon-pause">pause</i>
+                    <i class="material-icons icon-play">play_arrow</i>
+                </div>
+
+            </div>
+        </section>
+    </article>
+
+    <script type="text/javascript" src="./index.js"></script>
 </body>
 
 </html>

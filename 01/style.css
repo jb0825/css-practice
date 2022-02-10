@@ -1,15 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  user-select: none;
+  border: px solid black;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+img {
+  width: 100px;
+}
+a:hover {
+  text-decoration: none;
+}
+a:active {
+  text-decoration: none;
+}
+a:visited {
+  text-decoration: none;
+}
+a:link {
+  text-decoration: none;
+}
+
+/* Custom CSS */
 :root {
   --primary-light: #8abdff;
   --primary: #6d5dfc;
   --primary-dark: #5b0eeb;
   --white: #ffffff;
+  --blue: #027efb;
   --greyLight-1: #e4ebf5;
   --greyLight-2: #c8d0e7;
   --greyLight-3: #bec8e4;
   --greyDark: #9baacf;
 }
 
-.container {
+body {
+  display: flex;
   width: 100%;
   height: 100%;
   background: var(--greyLight-1);
@@ -18,7 +75,11 @@
   font-family: "Poppins", sans-serif;
 }
 
-section {
+article {
+  margin: 30px;
+}
+
+.content {
   margin: 40px 0px;
 }
 
@@ -26,10 +87,11 @@ section {
 .btn {
   width: 10rem;
   height: 3rem;
+  color: var(--greyDark);
   cursor: pointer;
   line-height: 3rem;
   border-radius: 10px;
-  box-shadow: 0.3rem 0.3rem 0.8rem var(--greyLight-3);
+  box-shadow: 0.3rem 0.3rem 0.8rem var(--greyLight-3), -0.3rem -0.3rem 0.8rem var(--white);
   margin: 10px;
   transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
@@ -42,15 +104,16 @@ section {
 }
 .btn-primary:active {
   box-shadow: inset 0.3rem 0.3rem 0.8rem var(--primary-dark),
-    inset -0.3rem -0.3rem 0.5rem var(--greyLight-3);
+    inset -0.3rem -0.3rem 0.5rem var(--greyLight-3), -0.2rem -0.2rem 0.5rem var(--white),
+    0.2rem 0.2rem 0.3rem var(--greyDark);
 }
 .primary-click {
   box-shadow: inset 0.3rem 0.3rem 0.8rem var(--primary-dark),
-    inset -0.3rem -0.3rem 0.5rem var(--greyLight-3);
+    inset -0.3rem -0.3rem 0.5rem var(--greyLight-3), -0.2rem -0.2rem 0.5rem var(--white),
+    0.2rem 0.2rem 0.3rem var(--greyDark);
 }
 
 .btn-secondary {
-  color: var(--greyDark);
   box-shadow: -0.1rem -0.1rem 0.3rem white, 0.1rem 0.1rem 0.3rem var(--greyDark);
 }
 .btn-secondary:hover {
@@ -63,17 +126,217 @@ section {
   box-shadow: inset -0.1rem -0.1rem 0.3rem white, inset 0.1rem 0.1rem 0.3rem var(--greyDark);
 }
 
+/* Effect Buttons */
+.btn-effect-1 {
+  background: linear-gradient(270deg, #ca90ff 0%, var(--blue) 100%);
+  position: relative;
+  z-index: 1;
+  color: var(--white);
+  border-radius: 5px;
+}
+.btn-effect-1::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0%;
+  height: 100%;
+  background: var(--greyLight-1);
+  transition: all 0.5s ease;
+  z-index: -1;
+}
+.btn-effect-1:hover {
+  color: var(--blue);
+}
+.btn-effect-1:hover::before {
+  width: 100%;
+  box-shadow: inset 0.1rem 0.1rem 0 var(--blue), inset -0.1rem -0.1rem 0 var(--blue);
+}
+
+.btn-effect-2 {
+  background: linear-gradient(270deg, #ca90ff 0%, var(--blue) 100%);
+  position: relative;
+  z-index: 1;
+  color: var(--white);
+  border-radius: 5px;
+}
+.btn-effect-2::before,
+.btn-effect-2::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 0%;
+  transition: all 0.5s ease;
+  z-index: -1;
+}
+.btn-effect-2::before {
+  box-shadow: inset 0.1rem 0.1rem 0 var(--blue);
+  left: 0;
+  top: 0;
+}
+.btn-effect-2::after {
+  box-shadow: inset -0.1rem -0.1rem 0 var(--blue);
+  left: 10rem;
+  top: 3rem;
+}
+.btn-effect-2:hover {
+  background: var(--greyLight-1);
+  color: var(--blue);
+}
+.btn-effect-2:hover::before,
+.btn-effect-2:hover::after {
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s ease;
+}
+.btn-effect-2:hover::after {
+  left: 0;
+  top: 0;
+}
+
 /* CheckBox */
 input {
   display: none;
 }
-.checkbox label {
-  border: 1px solid;
-  padding: 0.1rem;
+.checkbox .content {
+  display: flex;
+  text-align: center;
+  width: 11rem;
 }
-.checkbox label i {
+.checkbox .content div {
+  display: inline-block;
+  flex-basis: 50%;
+}
+
+.checkbox .type-1 label {
+  padding: 0.3rem;
+  box-shadow: -0.2rem -0.2rem 0.4rem var(--white), 0.2rem 0.2rem 0.4rem var(--greyDark);
+  border-radius: 5px;
+}
+.checkbox .type-1 label i {
   font-size: 1.2rem;
   font-weight: bold;
   color: var(--greyDark);
   vertical-align: middle;
+  width: 1.4rem;
+}
+.checkbox .type-1 input:checked + label {
+  box-shadow: inset -0.2rem -0.2rem 0.4rem var(--white), inset 0.1rem 0.1rem 0.3rem var(--greyDark);
+}
+.checkbox .type-1 input:checked + label i {
+  color: var(--primary);
+}
+
+.checkbox .type-2 label div {
+  position: relative;
+  width: 4.5rem;
+  height: 2.2rem;
+  border-radius: 20px;
+  box-shadow: -0.1rem -0.1rem 0.4rem var(--white), 0.2rem 0.2rem 0.5rem var(--greyDark);
+  overflow: hidden;
+  z-index: 1;
+}
+.checkbox .type-2 label div::before {
+  content: "";
+  position: absolute;
+  top: 0.3rem;
+  left: 0.3rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: var(--greyDark);
+  border-radius: 20px;
+  transition: all 0.5s ease;
+  z-index: 1;
+}
+.checkbox .type-2 input:checked + label div::before {
+  left: 2.6rem;
+  background: var(--white);
+}
+.checkbox .type-2 label div::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    330deg,
+    var(--primary-dark) 0%,
+    var(--primary) 50%,
+    var(--primary-light) 100%
+  );
+  opacity: 0;
+  transition: all 0.5s ease;
+  z-index: -1;
+}
+.checkbox .type-2 input:checked + label div::after {
+  opacity: 1;
+}
+
+/* Circle Button */
+.circle .content {
+  position: relative;
+  width: 9rem;
+  height: 9rem;
+}
+.circle .content div[class*="back"] {
+  position: absolute;
+  border-radius: 4rem;
+  box-shadow: inset 0.3rem 0.3rem 0.6rem var(--greyLight-2),
+    inset -0.3rem -0.3rem 0.6rem var(--white), 0.4rem 0.4rem 0.7rem var(--greyLight-2),
+    -0.3rem -0.3rem 0.6rem var(--white);
+}
+.circle .content .back-1 {
+  width: 50%;
+  height: 50%;
+  left: 25%;
+  top: 25%;
+  animation: waves 2.5s linear infinite;
+}
+.circle .content .back-2 {
+  width: 45%;
+  height: 45%;
+  left: 27.5%;
+  top: 27.5%;
+  animation: waves 1.5s linear infinite;
+}
+.circle-button {
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  border-radius: 4rem;
+  background: var(--greyLight-1);
+  line-height: 6rem;
+}
+.circle-button i {
+  font-size: 2.2rem;
+  color: var(--primary);
+  transform: scale(1, 1.3);
+  position: absolute;
+  top: 25%;
+  left: 25%;
+}
+.circle-button .icon-play {
+  display: none;
+}
+
+div[state*="pause"],
+div[state*="pause"] div {
+  animation-play-state: paused !important;
+}
+
+@keyframes waves {
+  0% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
 }
