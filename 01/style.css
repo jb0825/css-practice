@@ -1,9 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+/* Default Setting */
 * {
   margin: 0;
   padding: 0;
@@ -52,7 +49,7 @@ a:link {
   text-decoration: none;
 }
 
-/* Custom CSS */
+/* Custom CSS Start */
 :root {
   --primary-light: #8abdff;
   --primary: #6d5dfc;
@@ -77,15 +74,21 @@ body {
 
 article {
   margin: 30px;
+  width: 14rem;
 }
 
 .content {
-  margin: 40px 0px;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+.content > div {
+  margin: 0 auto;
+  margin-bottom: 1rem;
 }
 
 /* Buttons */
 .btn {
-  width: 10rem;
+  width: 11rem;
   height: 3rem;
   color: var(--greyDark);
   cursor: pointer;
@@ -176,7 +179,7 @@ article {
 }
 .btn-effect-2::after {
   box-shadow: inset -0.1rem -0.1rem 0 var(--blue);
-  left: 10rem;
+  left: 11rem;
   top: 3rem;
 }
 .btn-effect-2:hover {
@@ -321,12 +324,194 @@ input {
 .circle-button .icon-play {
   display: none;
 }
-
-div[state*="pause"],
-div[state*="pause"] div {
+.circle .pause,
+.circle .pause div {
   animation-play-state: paused !important;
 }
 
+/* Radio */
+.radio .type-1,
+.radio .type-2 {
+  display: flex;
+}
+.radio .type-1 > div,
+.radio .type-2 > div {
+  display: inline-block;
+  margin: 0 auto;
+}
+.radio .type-1 > div {
+  flex-basis: 15%;
+}
+.radio .type-1 label div {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 1rem;
+  box-shadow: -0.2rem -0.2rem 0.3rem var(--white), 0.2rem 0.2rem 0.3rem var(--greyDark);
+  position: relative;
+}
+.radio .type-1 label div:before {
+  content: "";
+  width: 55%;
+  height: 55%;
+  position: absolute;
+  top: 23%;
+  left: 23%;
+  border-radius: 1rem;
+  background: var(--greyDark);
+}
+.radio .type-1 input:checked + label div {
+  box-shadow: inset 0.1rem 0.1rem 0.2rem var(--greyDark), inset -0.1rem -0.1rem 0.3rem var(--white);
+}
+.radio .type-1 input:checked + label div:before {
+  background: var(--primary);
+}
+
+.radio .type-2 {
+  box-shadow: -0.2rem -0.2rem 0.3rem var(--white), 0.2rem 0.2rem 0.3rem var(--greyLight-3);
+  border-radius: 0.5rem;
+  height: 2.7rem;
+  line-height: 2rem;
+  color: var(--greyDark);
+  align-items: center;
+  position: relative;
+}
+.radio .type-2 label {
+  flex-basis: 45%;
+  width: 100%;
+  height: 75%;
+  border-radius: 0.5rem;
+  margin: 0 auto;
+}
+.radio .type-2 .radio-control {
+  position: absolute;
+  top: 10%;
+  left: 2%;
+  width: 30%;
+  height: 80%;
+  border-radius: 0.5rem;
+  transition: all 0.8s ease;
+  box-shadow: inset 0.1rem 0.1rem 0.2rem var(--greyLight-2),
+    inset -0.1rem -0.1rem 0.2rem var(--white);
+}
+.radio .type-2 #radio-4:checked ~ .radio-control {
+  left: 35%;
+}
+.radio .type-2 #radio-5:checked ~ .radio-control {
+  left: 68%;
+}
+.radio .type-2 input:checked + label {
+  color: var(--primary);
+}
+
+/* Search */
+.search .content {
+  position: relative;
+}
+.search label > div {
+  border-radius: 0.5rem;
+  box-shadow: inset 0.2rem 0.2rem 0.4rem var(--greyLight-2),
+    inset -0.2rem -0.2rem 0.4rem var(--white);
+  height: 3rem;
+  line-height: 4rem;
+  text-align: left;
+  padding: 0.1rem 0.7rem;
+  color: var(--greyDark);
+}
+.search input {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  width: 70%;
+  height: 100%;
+  padding: 0 0.8rem;
+  background: none;
+  color: var(--greyDark);
+}
+.search input::placeholder {
+  color: var(--greyDark);
+}
+.search input:focus {
+  outline: none;
+}
+.search input:focus + label div {
+  color: var(--primary);
+  box-shadow: 0.2rem 0.2rem 0.4rem var(--greyLight-2), -0.2rem -0.2rem 0.4rem var(--white);
+}
+
+/* Icon Buttons */
+.icon-button .content {
+  display: flex;
+}
+.icon-button .content > div {
+  display: inline-block;
+  margin: 0 auto;
+  line-height: 3.7rem;
+  border-radius: 2rem;
+  width: 3rem;
+  height: 3rem;
+  color: var(--greyDark);
+  box-shadow: -0.3rem -0.3rem 0.4rem var(--white), 0.3rem 0.3rem 0.4rem var(--greyLight-3);
+}
+.icon-button .content > div:active {
+  color: var(--primary);
+  box-shadow: inset -0.3rem -0.3rem 0.4rem var(--white),
+    inset 0.3rem 0.3rem 0.4rem var(--greyLight-3);
+}
+
+/* Range */
+.range-box {
+  position: relative;
+  width: 12rem;
+  height: 1rem;
+  border-radius: 1rem;
+  box-shadow: inset 0.2rem 0.2rem 0.2rem var(--greyLight-2),
+    inset -0.2rem -0.2rem 0.2rem var(--white);
+}
+.range-box .range-bar {
+  border-radius: 1rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    -1deg,
+    var(--primary-dark) 0%,
+    var(--primary) 50%,
+    var(--primary-light) 100%
+  );
+}
+.range-box .range-btn {
+  position: absolute;
+  left: 45%;
+  top: -0.2rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  border: 0.4rem solid var(--white);
+  background: var(--white);
+  border-radius: 1rem;
+  box-shadow: inset 0.1rem 0.1rem 0.3rem var(--greyLight-2),
+    inset -0.1rem -0.1rem 0.3rem var(--white);
+}
+.range-box .range-tooltip {
+  position: absolute;
+  left: 38%;
+  top: 2rem;
+  width: 3rem;
+  height: 2rem;
+  line-height: 2rem;
+  background: transparent;
+  border-radius: 0.5rem;
+  box-shadow: -0.2rem -0.2rem 0.3rem var(--white), 0.2rem 0.2rem 0.3rem var(--greyLight-2);
+  color: var(--primary-dark);
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+.range-box .range-btn:hover + .range-tooltip {
+  opacity: 1;
+}
+
+/* Animation */
 @keyframes waves {
   0% {
     transform: scale(1.5);
