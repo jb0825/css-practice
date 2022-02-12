@@ -102,18 +102,15 @@ article {
 .btn-primary {
   background: var(--primary);
   color: var(--greyLight-1);
-  box-shadow: inset 0.2rem 0.2rem 0.8rem var(--greyLight-1),
-    inset -0.2rem -0.2rem 0.5rem var(--primary-dark);
+  box-shadow: inset 0.2rem 0.2rem 0.8rem var(--greyLight-1), inset -0.2rem -0.2rem 0.5rem var(--primary-dark);
 }
 .btn-primary:active {
-  box-shadow: inset 0.3rem 0.3rem 0.8rem var(--primary-dark),
-    inset -0.3rem -0.3rem 0.5rem var(--greyLight-3), -0.2rem -0.2rem 0.5rem var(--white),
-    0.2rem 0.2rem 0.3rem var(--greyDark);
+  box-shadow: inset 0.3rem 0.3rem 0.8rem var(--primary-dark), inset -0.3rem -0.3rem 0.5rem var(--greyLight-3),
+    -0.2rem -0.2rem 0.5rem var(--white), 0.2rem 0.2rem 0.3rem var(--greyDark);
 }
 .primary-click {
-  box-shadow: inset 0.3rem 0.3rem 0.8rem var(--primary-dark),
-    inset -0.3rem -0.3rem 0.5rem var(--greyLight-3), -0.2rem -0.2rem 0.5rem var(--white),
-    0.2rem 0.2rem 0.3rem var(--greyDark);
+  box-shadow: inset 0.3rem 0.3rem 0.8rem var(--primary-dark), inset -0.3rem -0.3rem 0.5rem var(--greyLight-3),
+    -0.2rem -0.2rem 0.5rem var(--white), 0.2rem 0.2rem 0.3rem var(--greyDark);
 }
 
 .btn-secondary {
@@ -262,12 +259,7 @@ input {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    330deg,
-    var(--primary-dark) 0%,
-    var(--primary) 50%,
-    var(--primary-light) 100%
-  );
+  background: linear-gradient(330deg, var(--primary-dark) 0%, var(--primary) 50%, var(--primary-light) 100%);
   opacity: 0;
   transition: all 0.5s ease;
   z-index: -1;
@@ -285,9 +277,8 @@ input {
 .circle .content div[class*="back"] {
   position: absolute;
   border-radius: 4rem;
-  box-shadow: inset 0.3rem 0.3rem 0.6rem var(--greyLight-2),
-    inset -0.3rem -0.3rem 0.6rem var(--white), 0.4rem 0.4rem 0.7rem var(--greyLight-2),
-    -0.3rem -0.3rem 0.6rem var(--white);
+  box-shadow: inset 0.3rem 0.3rem 0.6rem var(--greyLight-2), inset -0.3rem -0.3rem 0.6rem var(--white),
+    0.4rem 0.4rem 0.7rem var(--greyLight-2), -0.3rem -0.3rem 0.6rem var(--white);
 }
 .circle .content .back-1 {
   width: 50%;
@@ -390,8 +381,7 @@ input {
   height: 80%;
   border-radius: 0.5rem;
   transition: all 0.8s ease;
-  box-shadow: inset 0.1rem 0.1rem 0.2rem var(--greyLight-2),
-    inset -0.1rem -0.1rem 0.2rem var(--white);
+  box-shadow: inset 0.1rem 0.1rem 0.2rem var(--greyLight-2), inset -0.1rem -0.1rem 0.2rem var(--white);
 }
 .radio .type-2 #radio-4:checked ~ .radio-control {
   left: 35%;
@@ -409,8 +399,7 @@ input {
 }
 .search label > div {
   border-radius: 0.5rem;
-  box-shadow: inset 0.2rem 0.2rem 0.4rem var(--greyLight-2),
-    inset -0.2rem -0.2rem 0.4rem var(--white);
+  box-shadow: inset 0.2rem 0.2rem 0.4rem var(--greyLight-2), inset -0.2rem -0.2rem 0.4rem var(--white);
   height: 3rem;
   line-height: 4rem;
   text-align: left;
@@ -453,9 +442,10 @@ input {
   box-shadow: -0.3rem -0.3rem 0.4rem var(--white), 0.3rem 0.3rem 0.4rem var(--greyLight-3);
 }
 .icon-button .content > div:active {
+  box-shadow: inset -0.3rem -0.3rem 0.4rem var(--white), inset 0.3rem 0.3rem 0.4rem var(--greyLight-3);
+}
+.icon-button .content > div:hover {
   color: var(--primary);
-  box-shadow: inset -0.3rem -0.3rem 0.4rem var(--white),
-    inset 0.3rem 0.3rem 0.4rem var(--greyLight-3);
 }
 
 /* Range */
@@ -464,24 +454,18 @@ input {
   width: 12rem;
   height: 1rem;
   border-radius: 1rem;
-  box-shadow: inset 0.2rem 0.2rem 0.2rem var(--greyLight-2),
-    inset -0.2rem -0.2rem 0.2rem var(--white);
+  box-shadow: inset 0.2rem 0.2rem 0.2rem var(--greyLight-2), inset -0.2rem -0.2rem 0.2rem var(--white);
 }
-.range-box .range-bar {
+.range-bar {
   border-radius: 1rem;
   position: absolute;
   left: 0;
   top: 0;
   width: 50%;
   height: 100%;
-  background: linear-gradient(
-    -1deg,
-    var(--primary-dark) 0%,
-    var(--primary) 50%,
-    var(--primary-light) 100%
-  );
+  background: linear-gradient(-1deg, var(--primary-dark) 0%, var(--primary) 50%, var(--primary-light) 100%);
 }
-.range-box .range-btn {
+.range-btn {
   position: absolute;
   left: 45%;
   top: -0.2rem;
@@ -490,10 +474,9 @@ input {
   border: 0.4rem solid var(--white);
   background: var(--white);
   border-radius: 1rem;
-  box-shadow: inset 0.1rem 0.1rem 0.3rem var(--greyLight-2),
-    inset -0.1rem -0.1rem 0.3rem var(--white);
+  box-shadow: inset 0.1rem 0.1rem 0.3rem var(--greyLight-2), inset -0.1rem -0.1rem 0.3rem var(--white);
 }
-.range-box .range-tooltip {
+.range-tooltip {
   position: absolute;
   left: 38%;
   top: 2rem;
@@ -505,9 +488,9 @@ input {
   box-shadow: -0.2rem -0.2rem 0.3rem var(--white), 0.2rem 0.2rem 0.3rem var(--greyLight-2);
   color: var(--primary-dark);
   opacity: 0;
-  transition: all 0.4s ease;
+  transition: opacity 0.4s ease;
 }
-.range-box .range-btn:hover + .range-tooltip {
+.range-box:hover .range-tooltip {
   opacity: 1;
 }
 

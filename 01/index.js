@@ -12,12 +12,30 @@ document.querySelector(".circle-button").onclick = function () {
   else toggleIcon(pauseIcon, playIcon);
 };
 
+/* range slider */
+const rangeBox = document.querySelector(".range-box");
 const rangeBar = document.querySelector(".range-bar");
 const rangeBtn = document.querySelector(".range-btn");
 const rangeTooltip = document.querySelector(".range-tooltip");
+const boxRect = rangeBox.getBoundingClientRect();
 
-rangeBtn.onmousedown = function (e) {};
+function handleRangeSlider(e) {
+  window.addEventListener("mousemove", onMouseMove);
+  window.onmouseup = function (e) {
+    window.removeEventListener("mousemove", onMouseMove);
+  };
+  onMouseMove(e);
+}
 
-window.onmousemove = function (e) {
-  e.preventDefault();
-};
+function onMouseMove(e) {
+  if (e.pageX < boxRect.left || e.pageX > boxRect.left + boxRect.width) return false;
+  const x = e.pageX - boxRect.left;
+
+  rangeBar.style.width = x + "px";
+  rangeBtn.style.left = x - rangeBtn.getBoundingClientRect().width / 2 + "px";
+  rangeTooltip.style.left = x - rangeTooltip.getBoundingClientRect().width / 2 + "px";
+  rangeTooltip.innerText = Math.ceil((x / boxRect.width) * 100) + "%";
+}
+
+rangeBtn.onmousedown = handleRangeSlider;
+rangeBox.onclick = onMouseMove;
