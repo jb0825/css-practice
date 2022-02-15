@@ -581,16 +581,6 @@ input {
   opacity: 1;
 }
 
-/* Theme */
-.theme .content {
-  position: relative;
-  margin-bottom: 0;
-  height: 14rem;
-  margin-top: 4rem;
-  border-radius: 1.5rem;
-  box-shadow: -0.2rem -0.2rem 0.4rem var(--white), 0.2rem 0.2rem 0.4rem var(--greyLight-2);
-}
-
 /* Animation */
 @keyframes waves {
   0% {
