@@ -1,0 +1,60 @@
+.theme1 {
+  padding: 2rem;
+  background: darkred;
+  color: lightpink;
+}
+.theme1 .message {
+  color: #f192f1;
+}
+.theme1 .theme-btn {
+  border: 0 none;
+  padding: 4px 8px;
+  border-radius: 2px;
+  cursor: pointer;
+  background: palevioletred;
+  color: white;
+}
+
+.theme2 {
+  padding: 2rem;
+  background: darkblue;
+  color: lightblue;
+}
+.theme2 .theme-btn {
+  border: 0 none;
+  padding: 4px 8px;
+  border-radius: 2px;
+  cursor: pointer;
+  background: skyblue;
+  color: darkblue;
+}
+
+.message {
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-decoration: underline;
+  color: lightgreen;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+ul li:nth-child(1):before {
+  content: "1: ";
+  margin-right: 5px;
+}
+ul li:nth-child(2):before {
+  content: "2: ";
+  margin-right: 5px;
+}
+ul li:nth-child(3):before {
+  content: "3: ";
+  margin-right: 5px;
+}
+ul li:nth-child(4):before {
+  content: "4: ";
+  margin-right: 5px;
+}
+
+/*# sourceMappingURL=index.css.map */

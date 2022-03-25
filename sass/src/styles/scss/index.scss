@@ -1,0 +1,60 @@
+$padding: 2rem;
+$msg_color: lightgreen;
+
+@mixin template($theme_name, $theme_bg, $theme_color) {
+  // 함수화
+  padding: $padding;
+  background: $theme_bg;
+  color: $theme_color;
+}
+
+@mixin btn($theme_name) {
+  border: 0 none;
+  padding: 4px 8px;
+  border-radius: 2px;
+  cursor: pointer;
+  @if $theme_name == "theme1" {
+    background: palevioletred;
+    color: white;
+  } @else {
+    background: skyblue;
+    color: darkblue;
+  }
+}
+
+.theme1 {
+  @include template("theme1", darkred, lightpink);
+  .message {
+    $msg_color: rgb(241, 146, 241); // 변수 재선언
+    color: $msg_color;
+  }
+  .theme-btn {
+    @include btn("theme1");
+  }
+}
+
+.theme2 {
+  @include template("theme2", darkblue, lightblue);
+  .theme-btn {
+    @include btn("theme2");
+  }
+}
+
+.message {
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-decoration: underline;
+  color: $msg_color;
+}
+
+ul {
+  // scss for 문
+  list-style-type: none;
+  padding: 0;
+  @for $i from 1 through 4 {
+    li:nth-child(#{$i}):before {
+      content: $i + ": ";
+      margin-right: 5px;
+    }
+  }
+}
