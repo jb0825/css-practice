@@ -1,0 +1,80 @@
+.hidden {
+  display: none;
+}
+
+.slider_container {
+  position: relative;
+
+  .prev::before,
+  .next::before {
+    content: "";
+    background: #222;
+    position: absolute;
+    background-image: url(assets/icon-arrow.png);
+    width: 2rem;
+    height: 2rem;
+    background-size: cover;
+    border-radius: 1rem;
+    z-index: 2;
+    cursor: pointer;
+    top: 45%;
+  }
+
+  .next::before {
+    transform: rotate(180deg);
+    right: 0%;
+  }
+
+  .slider_wrap {
+    border: 1px solid red;
+    * {
+      border: 1px solid blue;
+    }
+
+    margin: 1rem;
+    width: calc(100% - 2rem);
+    height: 23rem;
+    position: relative;
+    overflow: hidden;
+
+    .slider {
+      width: max-content;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      transition: all 0.7s ease;
+
+      & > div {
+        display: inline-block;
+        margin-right: 1rem;
+        width: 17rem;
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .image {
+        img {
+          width: 17rem;
+          height: 17rem;
+        }
+      }
+
+      .description {
+        .title {
+          display: block;
+          font-size: 1rem;
+          font-weight: bold;
+          margin: 0.5rem 0;
+        }
+
+        .date {
+          font-size: 0.9rem;
+          color: #888;
+        }
+      }
+    }
+  }
+}
