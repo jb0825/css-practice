@@ -47,7 +47,6 @@ const seconds = document.querySelector(".seconds");
 
 function setClock() {
   const date = new Date();
-  console.log(date.getHours());
   hours.style.transform = `rotate(${date.getHours() * 30}deg)`;
   minutes.style.transform = `rotate(${date.getMinutes() * 6}deg)`;
   seconds.style.transform = `rotate(${date.getSeconds() * 6}deg)`;
