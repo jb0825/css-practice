@@ -1,7 +1,6 @@
 # CSS Practice
 
-- 01 : css 연습
-
+- 01 : css 연습  
   ![1](./img/01.gif)
 
 - 02  
